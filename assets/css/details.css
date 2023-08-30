@@ -1,25 +1,87 @@
 .details {
-    width: 100vw;
-    height: 100vh;
-    padding: 1rem;
+    display:flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
 }
 
 .detailsMain {
-    height: 1000px;
+    padding: 0 2rem;
+    max-width: 800px;
+    width: 100%;
 }
 
-.types {
+.detailsMain #pokemonName, #pokemonNumber {
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+}
+
+.detailsMain #pokemonName {
+    font-size: 30px;
+    font-size: min(8vw, 30px);
+}
+
+.detailsMain #pokemonNumber {
+    font-size: 18px;
+    font-size: min(6vw, 18px);
+}
+
+.detailsMain .types {
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
-.types .type {
+.detailsMain .types .type {
     color: #fff;
     padding: .25rem .5rem;
-    margin: .25rem 0;
+    margin: .25rem .25rem;
     font-size: .625rem;
+    font-size: min(3vw, 0.625rem);
     border-radius: 1rem;
     filter: brightness(1.1);
     text-align: center;
 }
+
+.detailsMain .sprite {
+    position: relative;
+    bottom: -20px;
+    max-width: 300px;
+    width: calc(calc(100vw - 100px) * 0.6);
+    align-self: center;
+}
+
+.detailsMain .detailsInfo {
+    background-color: #FFF;
+    border-radius: 20px;
+}
+
+
+.detailsMain .detailsInfo .nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.detailsMain .detailsInfo .nav li a {
+    display: block;
+    color: #868686;
+    text-align: center;
+    padding: 32px 16px 16px 16px;
+    padding: 32px min(4vw, 16px) min(4vw, 16px) min(4vw, 16px);
+    font-size: 16px;
+    font-size: min(4vw, 16px);
+    caret-color: transparent;
+}
+
+.detailsMain .detailsInfo .nav li .selected {
+    color: #121212;
+    border-bottom: 2px solid black;
+}
+
+.detailsMain .detailsInfo .info {
+    height: 400px;
+}
+
