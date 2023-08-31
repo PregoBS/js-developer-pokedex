@@ -6,43 +6,45 @@
     overflow-y: auto;
 }
 
+.pokedex-link {
+    margin-top: 2rem;
+    margin-left: 0.25rem;
+    /* position: relative; */
+}
+
+.pokedex-link a {
+    background-color: #FFF;
+    cursor: pointer;
+    padding: 8px 20px;
+    border-radius: 6px;
+}
+
 .detailsMain {
     max-width: 800px;
     width: 100%;
-    padding-top: 1rem;
+    /* padding-top: 1rem; */
 }
 
 .detailsMain #pokemonName, #pokemonNumber {
     margin: 0;
     padding: 0;
     color: #FFFFFF;
-}
-
-.detailsMain #pokemonName {
-    font-size: 30px;
-    font-size: min(8vw, 30px);
-}
-
-.detailsMain #pokemonNumber {
-    font-size: 18px;
-    font-size: min(6vw, 18px);
+    text-transform: capitalize;
 }
 
 .detailsMain .types {
     padding: 0;
     margin: 0;
-    list-style: none;
 }
 
 .detailsMain .types .type {
     color: #fff;
     padding: .25rem .5rem;
     margin: .25rem .25rem;
-    font-size: .625rem;
-    font-size: min(3vw, 0.625rem);
     border-radius: 1rem;
     filter: brightness(1.1);
     text-align: center;
+    text-transform: capitalize;
 }
 
 .detailsMain .sprite {
@@ -62,7 +64,6 @@
 
 
 .detailsMain .detailsInfo .nav {
-    list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
@@ -74,8 +75,6 @@
     text-align: center;
     padding: 32px 16px 16px 16px;
     padding: 32px min(4vw, 16px) min(4vw, 16px) min(4vw, 16px);
-    font-size: 16px;
-    font-size: min(4vw, 16px);
     caret-color: transparent;
 }
 
@@ -85,6 +84,33 @@
 }
 
 .detailsMain .detailsInfo .info {
-    min-height: 300px;
+    min-height: 40vh;
+    padding: min(0.5rem, 0.8vh) min(3.25em, 6vw);
+}
+
+.detailsMain .detailsInfo .info ul {
+    line-height: 2.2rem;
+    text-transform: capitalize;
+}
+
+.detailsMain .detailsInfo .info ul .gender-m {
+    color: blue;
+    margin-right: 1.5rem;
+}
+
+.detailsMain .detailsInfo .info ul .gender-f {
+    color: red;
+}
+
+.detailsMain .detailsInfo .info .labels {
+    color: #787878;
+    text-align: left;
+    width: min(86px, 24vw);
+}
+
+.detailsMain .detailsInfo .info .values {
+    color: #121212;
+    text-align: left;
+    margin-left: 32px;
 }
 

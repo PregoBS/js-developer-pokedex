@@ -52,6 +52,10 @@ body {
     align-items: center;
 }
 
+.self-center {
+    align-self: center;
+}
+
 .border {
     border: 1px solid black;
 }
@@ -62,6 +66,42 @@ body {
 
 .text-decoration-none {
     text-decoration: none;
+}
+
+.font-30 {
+    font-size: 30px;
+    font-size: max(min(8vw, 30px), 18px);
+}
+
+.font-18 {
+    font-size: 18px;
+    font-size: max(min(6vw, 18px), 13px);
+}
+
+.font-16 {
+    font-size: 16px;
+    font-size: max(min(4.5vw, 16px), 11px);
+}
+
+.font-14 {
+    font-size: 14px;
+    font-size: max(min(3.8vw, 14px), 10px);
+}
+
+.font-12 {
+    font-size: 12px;
+    font-size: max(min(3.5vw, 12px), 10px);
+}
+
+.font-11 {
+    font-size: 11px;
+    font-size: max(min(3vw, 11px), 9px);
+}
+
+.list-style-none {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 @media screen and (min-width: 992px) {
