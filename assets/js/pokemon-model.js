@@ -1,29 +1,30 @@
 class Pokemon {
-  constructor({
-    number,
-    name,
-    type,
-    types,
-    photo,
-    moves,
-    abilities,
-    baseExp,
-    stats,
-    weight,
-    height,
-  }) {
-    this.number = number;
-    this.name = name;
-    this.type = type;
-    this.photo = photo;
-    this.baseExp = baseExp;
-    this.weight = weight;
-    this.height = height;
-    this.stats = stats || [];
-    this.types = types || [];
-    this.moves = moves || [];
-    this.abilities = abilities || [];
-  }
+  // from details
+  number;
+  name;
+  type;
+  types;
+  photo;
+  moves;
+  abilities;
+  baseExp;
+  stats;
+  weight;
+  height;
+  // from species
+  baseHappiness;
+  captureRate;
+  eggGroups;
+  genderRate; // The chance of this Pokémon being female, in eighths; or -1 for genderless
+  evolvesFromSpecies;
+  growthRate;
+  habitat;
+  hasGenderDifferences;
+  isBaby;
+  isLegendary;
+  isMythical;
+  shape;
+  varieties;
 }
 
 class PokemonStat {
@@ -56,5 +57,48 @@ class PokemonAbility {
     this.url = url;
     this.isHidden = isHidden;
     this.slot = slot
+  }
+}
+
+class PokemonEggGroup {
+  constructor({ name, url }) {
+    this.name = name;
+    this.url = url;
+  }
+}
+
+class PokemonEvolvesFromSpecies {
+  constructor({ name, url }) {
+    this.name = name;
+    this.url = url;
+  }
+}
+
+class PokemonGrowthRate {
+  constructor({ name, url }) {
+    this.name = name;
+    this.url = url;
+  }
+}
+
+class PokemonHabitat {
+  constructor({ name, url }) {
+    this.name = name;
+    this.url = url;
+  }
+}
+
+class PokemonShape {
+  constructor({ name, url }) {
+    this.name = name;
+    this.url = url;
+  }
+}
+
+class PokemonVariety {
+  constructor({ name, url, isDefault }) {
+    this.isDefault = isDefault;
+    this.name = name;
+    this.url = url;
   }
 }
