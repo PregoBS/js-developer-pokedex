@@ -6,9 +6,8 @@ const limit = 10;
 let offset = 0;
 
 function convertPokemonToLi(pokemon) {
-  console.log({ pokemon });
   return `
-    <a class="text-decoration-none" href="/details/about?number=${pokemon.number}">
+    <a class="text-decoration-none" href="/details/about?pokemon=${pokemon.name}">
       <li class="pokemon ${pokemon.type.name}">
         <span class="number">#${pokemon.number}</span>
         <span class="name">${pokemon.name}</span>
@@ -32,7 +31,7 @@ function loadPokemonItens(offset, limit) {
     const newHtml = Object.values(pokemonsCache)
       .map(convertPokemonToLi)
       .join("");
-    pokemonList.innerHTML += newHtml;
+    pokemonList.innerHTML = newHtml;
   });
 }
 
