@@ -1,11 +1,12 @@
-const pokemonsCache = {};
 const pokeApi = {};
 
 const POKEMONS_CACHE_KEY = "pokemons";
 
-function writeCacheToLocalStorage() {
+function writeCacheToLocalStorage(pokemon) {
   try {
-    localStorage.setItem(POKEMONS_CACHE_KEY, JSON.stringify(pokemonsCache));
+    let cache = JSON.parse(localStorage.getItem(POKEMONS_CACHE_KEY)) || {};
+    cache[pokemon.name] = pokemon;
+    localStorage.setItem(POKEMONS_CACHE_KEY, JSON.stringify(cache));
   } catch (err) {
     console.log("[LOCAL STORAGE] Error caching pokemons:", err);
   }
@@ -111,13 +112,12 @@ function convertPokeApiDetailAndSpeciesToPokemonAndCache(
         isDefault: variety.is_default,
       })
   );
-
-  pokemonsCache[pokemon.name] = pokemon;
-  return;
+  return pokemon;
 }
 
 pokeApi.getPokemonDetail = (pokemonName) => {
-  if (pokemonsCache[pokemonName]) return;
+  const cache = getPokemonsCache();
+  if (cache && cache[pokemonName]) return;
 
   const urls = [
     `https://pokeapi.co/api/v2/pokemon/${pokemonName}`,
@@ -128,9 +128,12 @@ pokeApi.getPokemonDetail = (pokemonName) => {
     urls.map((url) => fetch(url).then((response) => response.json()))
   )
     .then(([pokeDetails, pokeSpecies]) => {
-      convertPokeApiDetailAndSpeciesToPokemonAndCache(pokeDetails, pokeSpecies);
+      return convertPokeApiDetailAndSpeciesToPokemonAndCache(
+        pokeDetails,
+        pokeSpecies
+      );
     })
-    .then(writeCacheToLocalStorage);
+    .then((pokemon) => writeCacheToLocalStorage(pokemon));
 };
 
 pokeApi.getPokemons = (offset = 0, limit = 5) => {

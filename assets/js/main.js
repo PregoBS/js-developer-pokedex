@@ -7,7 +7,9 @@ let offset = 0;
 
 function convertPokemonToLi(pokemon) {
   return `
-    <a class="text-decoration-none" href="/details/about?pokemon=${pokemon.name}">
+    <a class="text-decoration-none" href="/details/about?pokemon=${
+      pokemon.name
+    }">
       <li class="pokemon ${pokemon.type.name}">
         <span class="number">#${pokemon.number}</span>
         <span class="name">${pokemon.name}</span>
@@ -28,10 +30,12 @@ function convertPokemonToLi(pokemon) {
 
 function loadPokemonItens(offset, limit) {
   pokeApi.getPokemons(offset, limit).then(() => {
-    const newHtml = Object.values(pokemonsCache)
-      .map(convertPokemonToLi)
-      .join("");
-    pokemonList.innerHTML = newHtml;
+    const cache = getPokemonsCache();
+    const pokemonsSlice = Object.values(cache).filter(
+      (pokemon) => pokemon.number >= offset && pokemon.number < offset + limit
+    );
+    const newHtml = pokemonsSlice.map(convertPokemonToLi).join("");
+    pokemonList.innerHTML += newHtml;
   });
 }
 
