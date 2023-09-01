@@ -20,7 +20,7 @@
 }
 
 .detailsMain {
-    max-width: 800px;
+    max-width: 500px;
     width: 100%;
     /* padding-top: 1rem; */
 }
@@ -51,7 +51,7 @@
     position: relative;
     bottom: -20px;
     max-width: 300px;
-    width: calc(calc(100vw - 100px) * 0.6);
+    width: min(calc(calc(100vw) * 0.5), 250px);
     align-self: center;
     caret-color: transparent;
 }
@@ -88,29 +88,69 @@
     padding: min(0.5rem, 0.8vh) min(3.25em, 6vw);
 }
 
+.detailsMain .detailsInfo .pokeTag {
+    position: relative;
+    right: 0;
+    padding: 4px 8px;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 1.0rem;
+    text-transform: uppercase;
+}
+
+.detailsMain .detailsInfo .tagBaby {
+    background-color: #DDE8B9;
+    color: #796465;
+    box-shadow: -1px -1px 4px 1px #DDE8B9, 1px 1px 4px 1px #C1ABA6;
+}
+
+.detailsMain .detailsInfo .tagLegendary {
+    background-color: #EEE0CB;
+    color: #946846;
+    box-shadow: -1px -1px 4px 1px #EEE0CB, 1px 1px 4px 1px #C1ABA6;
+}
+
+.detailsMain .detailsInfo .tagMythical {
+    background-color: #A393BF;
+    color: #0C0910;
+    box-shadow: -1px -1px 4px 1px #A393BF, 1px 1px 4px 1px #C1ABA6;
+}
+
 .detailsMain .detailsInfo .info ul {
     line-height: 2.2rem;
     text-transform: capitalize;
+    text-wrap: nowrap;
 }
 
 .detailsMain .detailsInfo .info ul .gender-m {
     color: blue;
-    margin-right: 1.5rem;
 }
 
 .detailsMain .detailsInfo .info ul .gender-f {
     color: red;
+    margin-left: 1.5rem;
 }
 
 .detailsMain .detailsInfo .info .labels {
     color: #787878;
     text-align: left;
-    width: min(86px, 24vw);
+    width: min(190px, 52vw);
 }
 
 .detailsMain .detailsInfo .info .values {
     color: #121212;
     text-align: left;
     margin-left: 32px;
+    width: 100%;
+}
+
+.detailsMain .detailsInfo .info .values .statsBar {
+    border: 1px solid #D9D9D9;
+    border-radius: 1px;
+}
+
+.detailsMain .detailsInfo .info .values .statsBarProgress {
+    border-radius: 1px;
+    height: 4px;
 }
 
