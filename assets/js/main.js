@@ -17,11 +17,11 @@ function convertPokemonToLi(pokemon) {
         <div class="detail">
           <ol class="types">
             ${pokemon.types
-              .map((type) => `<li class="type ${type}">${type.name}</li>`)
+              .map((type) => `<li class="type ${type.name}">${type.name}</li>`)
               .join("")}
           </ol>
 
-            <img src="${pokemon.photo}" alt="${pokemon.name}">
+            <img src="${pokemon.sprites.svg}" alt="${pokemon.name}">
         </div>
       </li>
     </a>
@@ -33,7 +33,7 @@ function loadPokemonItens(offset, limit) {
     const cache = getPokemonsCache();
     const pokemonsSlice = Object.values(cache).filter(
       (pokemon) => pokemon.number >= offset && pokemon.number < offset + limit
-    );
+    ).sort((a, b) => a.number - b.number);
     const newHtml = pokemonsSlice.map(convertPokemonToLi).join("");
     pokemonList.innerHTML += newHtml;
   });

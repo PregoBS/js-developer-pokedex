@@ -40,7 +40,17 @@ function convertPokeApiDetailAndSpeciesToPokemonAndCache(
   pokemon.name = pokeDetail.name;
   pokemon.type = types[0];
   pokemon.types = types;
-  pokemon.photo = pokeDetail.sprites.other.dream_world.front_default;
+  pokemon.sprites = new PokemonSprites({
+    svg: pokeDetail.sprites.other.dream_world.front_default,
+    male: pokeDetail.sprites.front_default,
+    female: pokeDetail.sprites.front_female,
+    shinyMale: pokeDetail.sprites.front_shiny,
+    shinyFemale: pokeDetail.sprites.front_shiny_female,
+    backMale: pokeDetail.sprites.back_default,
+    backFemale: pokeDetail.sprites.back_female,
+    backShinyMale: pokeDetail.sprites.back_shiny,
+    backShinyFemale: pokeDetail.sprites.back_shiny_female,
+  });
   pokemon.weight = pokeDetail.weight;
   pokemon.height = pokeDetail.height;
   pokemon.baseExp = pokeDetail.base_experience;

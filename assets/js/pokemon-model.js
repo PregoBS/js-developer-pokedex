@@ -4,7 +4,7 @@ class Pokemon {
   name;
   type;
   types;
-  photo;
+  sprites;
   moves;
   abilities;
   baseExp;
@@ -41,6 +41,26 @@ class PokemonType {
     this.slot = slot;
     this.name = name;
     this.url = url;
+  }
+}
+
+class PokemonSprites {
+  constructor({ svg, male, female, shinyMale, shinyFemale, backMale, backFemale, backShinyMale, backShinyFemale }) {
+    this.svg = svg;
+    this.default = {};
+    this.default.male = {};
+    this.default.male.front = male;
+    this.default.male.back = backMale;
+    this.default.female = {};
+    this.default.female.front = female;
+    this.default.female.back = backFemale;
+    this.shiny = {};
+    this.shiny.male = {};
+    this.shiny.male.front = shinyMale;
+    this.shiny.male.back = backShinyMale;
+    this.shiny.female = {};
+    this.shiny.female.front = shinyFemale;
+    this.shiny.female.back = backShinyFemale;
   }
 }
 
