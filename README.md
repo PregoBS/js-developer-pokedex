@@ -18,16 +18,16 @@ npx http-server .\
 
 ### Home Page
 
-![home](./assets/ss/screenshot-home-01.png)
+![home](./public/ss/screenshot-home-01.png)
 
 ### About Page
 
-![home](./assets/ss/screenshot-about-01.png)
+![home](./public/ss/screenshot-about-01.png)
 
 ### Base Stats Page
 
-![home](./assets/ss/screenshot-stats-01.png)
+![home](./public/ss/screenshot-stats-01.png)
 
 ### Sprites Page
 
-![home](./assets/ss/screenshot-sprites-01.png)
+![home](./public/ss/screenshot-sprites-01.png)
