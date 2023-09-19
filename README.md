@@ -1,5 +1,7 @@
 # Trilha JS Developer - Pokedex
 
+see [Pokédex](https://pokedex.pregobs.xyz) in production
+
 ## Run the project locally
 
 make sure you have NodeJS installed
